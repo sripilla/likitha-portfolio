@@ -91,13 +91,13 @@
       <div class="card">
         <div class="card-top">
           <div class="card-title">CareVoice AI</div>
-          <div class="card-metric mono">5 eval metrics</div>
+          <div class="card-metric mono">20 tests</div>
         </div>
         <div class="card-desc">
-          A multilingual medical speech pipeline that turns doctor–patient audio into transcripts, translations and summaries. Each stage is benchmarked: WER and CER for transcription, ROUGE for summaries, BLEU and chrF for translation.
+          A multilingual clinical consultation assistant. It turns doctor–patient audio into transcripts, English translations, summaries and structured clinical data, then scores risk and generates PDF reports. It has a FastAPI backend, a Streamlit UI and SQLite storage, and each AI stage is benchmarked with WER/CER, ROUGE and BLEU/chrF.
         </div>
         <div class="stack-row">
-          <span class="pill">Whisper</span><span class="pill">BART</span><span class="pill">NLLB</span><span class="pill">Hugging Face</span><span class="pill">Librosa</span>
+          <span class="pill">Faster-Whisper</span><span class="pill">NLLB</span><span class="pill">BART</span><span class="pill">spaCy</span><span class="pill">FastAPI</span><span class="pill">SQLite</span><span class="pill">pytest</span><span class="pill">Docker</span>
         </div>
         <div class="card-links">
           <a href="https://github.com/sripilla/CareVoice-AI" target="_blank" rel="noopener">GitHub →</a>
@@ -122,8 +122,9 @@
       </div>
       <ul class="card-points">
         <li>Contributing to AURA, a multimodal AI voice companion for elderly and dementia care, built with speech-to-text, LLMs, real-time audio, PostgreSQL + pgvector RAG and React.</li>
-        <li>Drafted a technical build plan covering architecture trade-offs and a per-user baseline profiling pipeline.</li>
-        <li>Working in Agile sprints with stand-ups, sprint planning and retrospectives, and peer code reviews on pull requests.</li>
+        <li>Built voice authentication using ECAPA-TDNN speaker embeddings to verify a user's identity before granting access to sensitive conversations.</li>
+        <li>Built a distress classification model with XGBoost that detects stress and emotional strain from voice patterns.</li>
+        <li>Working in Agile sprints (stand-ups, planning, retrospectives) with peer code reviews on pull requests.</li>
       </ul>
     </div>
 
@@ -161,22 +162,28 @@
       <div>
         <p class="skill-group-title mono">web &amp; databases</p>
         <div class="stack-row">
-          <span class="pill">React</span><span class="pill">FastAPI</span><span class="pill">PostgreSQL</span><span class="pill">Streamlit</span>
+          <span class="pill">React</span><span class="pill">FastAPI</span><span class="pill">PostgreSQL</span><span class="pill">SQLite</span><span class="pill">Streamlit</span>
         </div>
       </div>
       <div>
         <p class="skill-group-title mono">ai / ml</p>
         <div class="stack-row">
-          <span class="pill">PyTorch</span><span class="pill">TensorFlow</span><span class="pill">Scikit-learn</span><span class="pill">Hugging Face</span><span class="pill">LLMs &amp; RAG</span><span class="pill">NLP</span><span class="pill">Speech processing</span>
+          <span class="pill">PyTorch</span><span class="pill">Scikit-learn</span><span class="pill">XGBoost</span><span class="pill">Hugging Face</span><span class="pill">LLMs &amp; RAG</span><span class="pill">NLP</span><span class="pill">Speech processing</span><span class="pill">Speaker verification</span>
         </div>
       </div>
       <div>
         <p class="skill-group-title mono">tools &amp; practices</p>
         <div class="stack-row">
-          <span class="pill">Git / GitHub</span><span class="pill">Linux</span><span class="pill">GCP</span><span class="pill">Agile / Scrum</span><span class="pill">Code reviews</span>
+          <span class="pill">Git / GitHub</span><span class="pill">pytest</span><span class="pill">Linux</span><span class="pill">GCP</span><span class="pill">Vercel</span><span class="pill">Agile / Scrum</span><span class="pill">Code reviews</span>
         </div>
       </div>
-      <div class="skills-wide">
+      <div>
+        <p class="skill-group-title mono">ai coding agents</p>
+        <div class="stack-row">
+          <span class="pill">Claude Code</span><span class="pill">OpenAI Codex</span><span class="pill">GitHub Copilot</span>
+        </div>
+      </div>
+      <div>
         <p class="skill-group-title mono">familiar with</p>
         <div class="stack-row">
           <span class="pill pill-dim">TypeScript</span><span class="pill pill-dim">JavaScript</span><span class="pill pill-dim">Tailwind CSS</span><span class="pill pill-dim">Vite</span><span class="pill pill-dim">WebSockets</span><span class="pill pill-dim">JWT</span><span class="pill pill-dim">SQLAlchemy</span><span class="pill pill-dim">Alembic</span><span class="pill pill-dim">Qdrant</span><span class="pill pill-dim">Docker</span>
