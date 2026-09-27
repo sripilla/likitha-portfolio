@@ -53,6 +53,9 @@ def _send_via_resend(name: str, sender_email: str, message: str) -> None:
         headers={
             "Authorization": f"Bearer {settings.RESEND_API_KEY}",
             "Content-Type": "application/json",
+            # Resend sits behind Cloudflare, which rejects Python's default
+            # "Python-urllib" User-Agent with a 403 (error 1010).
+            "User-Agent": "likitha-portfolio/1.0",
         },
         method="POST",
     )
