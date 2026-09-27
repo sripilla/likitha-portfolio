@@ -48,6 +48,7 @@ h1{font-size:52px;font-weight:600;letter-spacing:-1px;margin-bottom:8px;}
 .subtitle{color:var(--text-dim);font-size:13px;margin-bottom:26px;}
 .pitch{max-width:480px;font-size:16px;color:var(--text);margin-bottom:32px;}
 .cta-row{display:flex;gap:12px;margin-bottom:44px;flex-wrap:wrap;}
+a.btn{display:inline-block;}
 .btn{
   font-family:'JetBrains Mono',monospace;font-size:13px;
   padding:11px 20px;border-radius:6px;font-weight:500;cursor:pointer;
@@ -71,7 +72,7 @@ h2{font-size:28px;font-weight:600;margin-bottom:36px;}
   scrollbar-width:thin;
 }
 .log-item{
-  min-width:220px;flex-shrink:0;
+  flex:1 1 0;min-width:200px;
   border-left:2px solid var(--border);padding:0 20px 4px 20px;
   position:relative;
 }
@@ -112,12 +113,23 @@ h2{font-size:28px;font-weight:600;margin-bottom:36px;}
 .skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;}
 @media(max-width:640px){.skills-grid{grid-template-columns:1fr;}}
 .skill-group-title{font-size:12px;color:var(--text-dim);margin-bottom:14px;letter-spacing:0.5px;}
-.skill-row{display:flex;align-items:center;gap:10px;margin-bottom:12px;font-size:13px;}
-.skill-name{width:110px;flex-shrink:0;}
-.skill-bar{flex:1;height:4px;background:var(--border);border-radius:2px;overflow:hidden;}
-.skill-fill{height:100%;background:var(--sage);border-radius:2px;}
+/* CARD EXTRAS */
+.card-wide{grid-column:1 / -1;}
+.card-points{list-style:none;margin:0 0 14px;padding:0;}
+.card-points li{position:relative;padding-left:16px;font-size:13px;color:var(--text-dim);margin-bottom:6px;}
+.card-points li::before{content:'›';position:absolute;left:0;color:var(--sage);font-family:'JetBrains Mono',monospace;}
+.pill-dim{background:transparent;color:var(--text-dim);border:0.5px solid var(--border);}
+.skills-wide{grid-column:1 / -1;}
+
+/* EXPERIENCE */
+.job{background:var(--surface);border:0.5px solid var(--border);border-radius:12px;padding:22px;margin-bottom:36px;}
+.job-head{display:flex;justify-content:space-between;align-items:start;gap:16px;margin-bottom:14px;flex-wrap:wrap;}
+.job-title{font-size:16px;font-weight:600;}
+.job-org{font-size:13px;color:var(--text-dim);}
+.job-date{font-size:11px;color:var(--amber);border:0.5px solid var(--border);padding:2px 8px;border-radius:4px;white-space:nowrap;}
 
 /* CONTACT */
+.contact-note{color:var(--text-dim);font-size:14px;margin-bottom:24px;}
 .contact-box{
   background:var(--surface);border:0.5px solid var(--border);
   border-radius:12px;padding:32px;
@@ -143,3 +155,13 @@ h2{font-size:28px;font-weight:600;margin-bottom:36px;}
 .form-status.error{color:var(--error);}
 
 footer{padding:28px 0;text-align:center;font-size:11px;color:var(--text-dim);}
+
+@media(max-width:640px){
+  h1{font-size:38px;}
+  header.hero{padding:56px 0 44px;}
+  .nav-links{gap:16px;font-size:12px;}
+  .logo{font-size:13px;}
+  .contact-box{padding:22px;}
+  .stats{gap:24px;}
+}
+@media(max-width:380px){ .logo{display:none;} nav .wrap{justify-content:center;} }

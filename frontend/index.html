@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Likitha R. — AI/ML Engineer</title>
-<meta name="description" content="Final-year B.Tech AI/ML student. Portfolio of applied machine learning and deep learning projects.">
+<title>Likitha Sai Sri Pilla — Software Engineer</title>
+<meta name="description" content="Likitha Sai Sri Pilla — B.Tech CSE (AI/ML) at MIT Manipal. Full-stack web applications and practical AI systems.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/style.css">
@@ -13,10 +13,10 @@
 
 <nav>
   <div class="wrap">
-    <div class="logo mono">likitha.r</div>
+    <div class="logo mono">likitha.pilla</div>
     <div class="nav-links mono">
       <a href="#projects">projects</a>
-      <a href="#log">log</a>
+      <a href="#experience">work</a>
       <a href="#skills">skills</a>
       <a href="#contact">contact</a>
     </div>
@@ -26,57 +26,24 @@
 <header class="hero">
   <div class="wrap">
     <div class="tag-row mono">
-      <span class="file">model_card.yaml</span>
+      <span class="file">profile.yaml</span>
       <span class="status">open-to-work</span>
     </div>
-    <h1 class="display">Likitha R.</h1>
-    <p class="subtitle mono">final-year-btech-ai-ml &middot; v2026</p>
-    <p class="pitch">Building models that ship, not just notebooks that run. Focused on applied machine learning, computer vision, and deploying AI that works outside a demo.</p>
+    <h1 class="display">Likitha Sai Sri Pilla</h1>
+    <p class="subtitle mono">b.tech-cse-ai-ml &middot; mit-manipal &middot; class-of-2027</p>
+    <p class="pitch">I build full-stack web apps and practical AI systems, from a real-time restaurant ordering platform to offline retrieval-augmented search. Currently an AI &amp; Software Engineering Intern at 1E Tech.</p>
     <div class="cta-row">
-      <button class="btn btn-primary mono" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">view_projects()</button>
-      <a href="/assets/resume.pdf" target="_blank"><button class="btn btn-secondary mono">resume.pdf</button></a>
-      <a href="#contact"><button class="btn btn-secondary mono">get_in_touch()</button></a>
+      <a href="#projects" class="btn btn-primary mono">view_projects()</a>
+      <a href="/assets/resume.pdf" target="_blank" rel="noopener" class="btn btn-secondary mono">resume.pdf</a>
+      <a href="#contact" class="btn btn-secondary mono">get_in_touch()</a>
     </div>
     <div class="stats">
-      <div><div class="stat-num mono">6+</div><div class="stat-label mono">projects</div></div>
-      <div><div class="stat-num mono">2</div><div class="stat-label mono">internships</div></div>
-      <div><div class="stat-num mono">3</div><div class="stat-label mono">publications/certs</div></div>
+      <div><div class="stat-num mono">3</div><div class="stat-label mono">shipped projects</div></div>
+      <div><div class="stat-num mono">1</div><div class="stat-label mono">internship</div></div>
+      <div><div class="stat-num mono">5</div><div class="stat-label mono">certifications</div></div>
     </div>
   </div>
 </header>
-
-<section id="log">
-  <div class="wrap">
-    <p class="eyebrow mono">// timeline</p>
-    <h2 class="display">Training log</h2>
-    <div class="log-scroll">
-      <div class="log-item">
-        <div class="log-epoch mono">epoch 01 &middot; 2023</div>
-        <div class="log-title">Started B.Tech AI/ML</div>
-        <div class="log-metric mono">loss: high, curiosity: higher</div>
-        <div class="log-desc">Began coursework in Python, data structures, and linear algebra foundations.</div>
-      </div>
-      <div class="log-item">
-        <div class="log-epoch mono">epoch 02 &middot; 2024</div>
-        <div class="log-title">First ML internship</div>
-        <div class="log-metric mono">accuracy ↑ 14%</div>
-        <div class="log-desc">Worked on a classification pipeline for [Company], improved model accuracy on production data.</div>
-      </div>
-      <div class="log-item">
-        <div class="log-epoch mono">epoch 03 &middot; 2025</div>
-        <div class="log-title">Published research / hackathon win</div>
-        <div class="log-metric mono">rank: top 5%</div>
-        <div class="log-desc">Placed in [Hackathon name] with a real-time computer vision project.</div>
-      </div>
-      <div class="log-item">
-        <div class="log-epoch mono">epoch 04 &middot; 2026</div>
-        <div class="log-title">Final-year project + job search</div>
-        <div class="log-metric mono">status: converging</div>
-        <div class="log-desc">Building capstone project on [topic] while interviewing for ML engineer roles.</div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <section id="projects">
   <div class="wrap">
@@ -84,66 +51,98 @@
     <h2 class="display">Projects</h2>
     <div class="project-grid">
 
-      <div class="card">
+      <div class="card card-wide">
         <div class="card-top">
-          <div class="card-title">Fraud detection model</div>
-          <div class="card-metric mono">f1: 0.94</div>
+          <div class="card-title">ChefStory: real-time restaurant ordering platform</div>
+          <div class="card-metric mono">54 endpoints</div>
         </div>
-        <div class="card-desc">Classifies fraudulent transactions on imbalanced financial data using ensemble methods.</div>
+        <div class="card-desc">
+          Diners scan a table QR code to browse the menu, order and track their food live. Kitchen, counter, floor staff and admin each get their own screen.
+        </div>
+        <ul class="card-points">
+          <li>REST API across 11 modules (orders, menu, billing, tables, analytics, expenses) on PostgreSQL</li>
+          <li>WebSocket updates route each order to the right kitchen station and push status back to the table instantly</li>
+          <li>JWT login with role-based access, plus an admin dashboard with PDF and Excel sales reports</li>
+        </ul>
         <div class="stack-row">
-          <span class="pill">Python</span><span class="pill">Scikit-learn</span><span class="pill">Pandas</span>
+          <span class="pill">React</span><span class="pill">TypeScript</span><span class="pill">FastAPI</span><span class="pill">PostgreSQL</span><span class="pill">WebSockets</span><span class="pill">JWT</span>
         </div>
         <div class="card-links">
-          <a href="#" target="_blank" rel="noopener">GitHub →</a>
-          <a href="#" target="_blank" rel="noopener">Live demo →</a>
+          <a href="https://github.com/sripilla/chefstory" target="_blank" rel="noopener">GitHub →</a>
         </div>
       </div>
 
       <div class="card">
         <div class="card-top">
-          <div class="card-title">Real-time object detector</div>
-          <div class="card-metric mono">mAP: 0.87</div>
+          <div class="card-title">VectorDNA</div>
+          <div class="card-metric mono">100% offline</div>
         </div>
-        <div class="card-desc">YOLO-based detection pipeline deployed for live video streams, optimized for edge inference.</div>
+        <div class="card-desc">
+          A local RAG system that answers questions about Python documentation. It uses Sentence Transformer embeddings with Qdrant vector search, and a local LLM through Ollama generates answers with their sources.
+        </div>
         <div class="stack-row">
-          <span class="pill">PyTorch</span><span class="pill">OpenCV</span><span class="pill">ONNX</span>
+          <span class="pill">Python</span><span class="pill">FastAPI</span><span class="pill">Qdrant</span><span class="pill">Ollama</span><span class="pill">Streamlit</span>
         </div>
         <div class="card-links">
-          <a href="#" target="_blank" rel="noopener">GitHub →</a>
-          <a href="#" target="_blank" rel="noopener">Demo video →</a>
+          <a href="https://github.com/sripilla/vector-dna" target="_blank" rel="noopener">GitHub →</a>
         </div>
       </div>
 
       <div class="card">
         <div class="card-top">
-          <div class="card-title">Sentiment analysis API</div>
-          <div class="card-metric mono">latency: 80ms</div>
+          <div class="card-title">CareVoice AI</div>
+          <div class="card-metric mono">5 eval metrics</div>
         </div>
-        <div class="card-desc">Fine-tuned transformer model served as a REST API for real-time text sentiment scoring.</div>
+        <div class="card-desc">
+          A multilingual medical speech pipeline that turns doctor–patient audio into transcripts, translations and summaries. Each stage is benchmarked: WER and CER for transcription, ROUGE for summaries, BLEU and chrF for translation.
+        </div>
         <div class="stack-row">
-          <span class="pill">HuggingFace</span><span class="pill">FastAPI</span><span class="pill">Docker</span>
+          <span class="pill">Whisper</span><span class="pill">BART</span><span class="pill">NLLB</span><span class="pill">Hugging Face</span><span class="pill">Librosa</span>
         </div>
         <div class="card-links">
-          <a href="#" target="_blank" rel="noopener">GitHub →</a>
-          <a href="#" target="_blank" rel="noopener">Try it →</a>
+          <a href="https://github.com/sripilla/CareVoice-AI" target="_blank" rel="noopener">GitHub →</a>
         </div>
       </div>
 
-      <div class="card">
-        <div class="card-top">
-          <div class="card-title">Crop yield predictor</div>
-          <div class="card-metric mono">r²: 0.89</div>
-        </div>
-        <div class="card-desc">Regression model predicting crop yield from weather and soil data for a college-sponsored project.</div>
-        <div class="stack-row">
-          <span class="pill">XGBoost</span><span class="pill">Streamlit</span>
-        </div>
-        <div class="card-links">
-          <a href="#" target="_blank" rel="noopener">GitHub →</a>
-          <a href="#" target="_blank" rel="noopener">Live app →</a>
-        </div>
-      </div>
+    </div>
+  </div>
+</section>
 
+<section id="experience">
+  <div class="wrap">
+    <p class="eyebrow mono">// experience</p>
+    <h2 class="display">Work</h2>
+    <div class="job">
+      <div class="job-head">
+        <div>
+          <div class="job-title">AI &amp; Software Engineering Intern</div>
+          <div class="job-org">1E Tech Pty Ltd &middot; Remote</div>
+        </div>
+        <div class="job-date mono">Aug 2026 – present</div>
+      </div>
+      <ul class="card-points">
+        <li>Contributing to AURA, a multimodal AI voice companion for elderly and dementia care, built with speech-to-text, LLMs, real-time audio, PostgreSQL + pgvector RAG and React.</li>
+        <li>Drafted a technical build plan covering architecture trade-offs and a per-user baseline profiling pipeline.</li>
+        <li>Working in Agile sprints with stand-ups, sprint planning and retrospectives, and peer code reviews on pull requests.</li>
+      </ul>
+    </div>
+
+    <div class="log-scroll">
+      <div class="log-item">
+        <div class="log-epoch mono">2023</div>
+        <div class="log-title">Started B.Tech</div>
+        <div class="log-desc">Computer Science &amp; Engineering (AI/ML) at Manipal Institute of Technology.</div>
+      </div>
+      <div class="log-item">
+        <div class="log-epoch mono">aug 2026</div>
+        <div class="log-title">Joined 1E Tech</div>
+        <div class="log-desc">AI &amp; Software Engineering Intern on the AURA product team.</div>
+      </div>
+      <div class="log-item">
+        <div class="log-epoch mono">2027</div>
+        <div class="log-title">Next commit</div>
+        <div class="log-desc">Looking for software engineering internships and new-grad roles. Graduating July 2027.</div>
+      </div>
     </div>
   </div>
 </section>
@@ -154,18 +153,34 @@
     <h2 class="display">Skills</h2>
     <div class="skills-grid">
       <div>
-        <p class="skill-group-title mono">ml / dl</p>
-        <div class="skill-row"><span class="skill-name">PyTorch</span><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div></div>
-        <div class="skill-row"><span class="skill-name">TensorFlow</span><div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div></div>
-        <div class="skill-row"><span class="skill-name">Scikit-learn</span><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
-        <div class="skill-row"><span class="skill-name">NLP / HF</span><div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div></div>
+        <p class="skill-group-title mono">core</p>
+        <div class="stack-row">
+          <span class="pill">Python</span><span class="pill">Java</span><span class="pill">SQL</span><span class="pill">Data Structures &amp; Algorithms</span><span class="pill">OOP</span><span class="pill">REST API design</span>
+        </div>
       </div>
       <div>
-        <p class="skill-group-title mono">engineering</p>
-        <div class="skill-row"><span class="skill-name">Python</span><div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div></div>
-        <div class="skill-row"><span class="skill-name">SQL</span><div class="skill-bar"><div class="skill-fill" style="width:78%"></div></div></div>
-        <div class="skill-row"><span class="skill-name">Docker</span><div class="skill-bar"><div class="skill-fill" style="width:65%"></div></div></div>
-        <div class="skill-row"><span class="skill-name">Git</span><div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div></div>
+        <p class="skill-group-title mono">web &amp; databases</p>
+        <div class="stack-row">
+          <span class="pill">React</span><span class="pill">FastAPI</span><span class="pill">PostgreSQL</span><span class="pill">Streamlit</span>
+        </div>
+      </div>
+      <div>
+        <p class="skill-group-title mono">ai / ml</p>
+        <div class="stack-row">
+          <span class="pill">PyTorch</span><span class="pill">TensorFlow</span><span class="pill">Scikit-learn</span><span class="pill">Hugging Face</span><span class="pill">LLMs &amp; RAG</span><span class="pill">NLP</span><span class="pill">Speech processing</span>
+        </div>
+      </div>
+      <div>
+        <p class="skill-group-title mono">tools &amp; practices</p>
+        <div class="stack-row">
+          <span class="pill">Git / GitHub</span><span class="pill">Linux</span><span class="pill">GCP</span><span class="pill">Agile / Scrum</span><span class="pill">Code reviews</span>
+        </div>
+      </div>
+      <div class="skills-wide">
+        <p class="skill-group-title mono">familiar with</p>
+        <div class="stack-row">
+          <span class="pill pill-dim">TypeScript</span><span class="pill pill-dim">JavaScript</span><span class="pill pill-dim">Tailwind CSS</span><span class="pill pill-dim">Vite</span><span class="pill pill-dim">WebSockets</span><span class="pill pill-dim">JWT</span><span class="pill pill-dim">SQLAlchemy</span><span class="pill pill-dim">Alembic</span><span class="pill pill-dim">Qdrant</span><span class="pill pill-dim">Docker</span>
+        </div>
       </div>
     </div>
   </div>
@@ -176,8 +191,8 @@
     <p class="eyebrow mono">// reach out</p>
     <h2 class="display">Contact</h2>
     <div class="contact-box">
-      <p class="prompt-line">$ reach_out --email likitha.r@example.com</p>
-      <p style="color:var(--text-dim); font-size:14px; margin-bottom:24px;">Open to full-time ML engineer, data scientist, and applied AI roles starting 2027. Also happy to chat about projects, research, or opportunities.</p>
+      <p class="prompt-line">$ reach_out --email pilla.likitha@gmail.com</p>
+      <p class="contact-note">Open to software engineering internships and new-grad roles for 2027. Also happy to talk about projects or opportunities.</p>
 
       <form id="contact-form" novalidate>
         <div class="form-row">
@@ -203,17 +218,17 @@
       </form>
 
       <div class="contact-links mono">
-        <a href="mailto:likitha.r@example.com">Email</a>
-        <a href="#" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="#" target="_blank" rel="noopener">GitHub</a>
-        <a href="/assets/resume.pdf" target="_blank">Resume</a>
+        <a href="mailto:pilla.likitha@gmail.com">Email</a>
+        <a href="https://linkedin.com/in/likitha-sai-sri-pilla-0730a23a9" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/sripilla" target="_blank" rel="noopener">GitHub</a>
+        <a href="/assets/resume.pdf" target="_blank" rel="noopener">Resume</a>
       </div>
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="wrap mono">built by Likitha R. &middot; 2026</div>
+  <div class="wrap mono">built by Likitha Sai Sri Pilla &middot; 2026</div>
 </footer>
 
 <script src="/assets/script.js"></script>

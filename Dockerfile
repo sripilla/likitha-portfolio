@@ -17,4 +17,7 @@ USER appuser
 
 EXPOSE 8000
 
-CMD ["uvicorn", "backend.main:app", "--host", "0.0.0.0", "--port", "8000"]
+# Hosts like Railway/Render inject $PORT; fall back to 8000 locally.
+# --proxy-headers makes rate limiting see the real visitor IP instead of the
+# platform's load balancer (otherwise every visitor shares one 5/hour limit).
+CMD ["sh", "-c", "uvicorn backend.main:app --host 0.0.0.0 --port ${PORT:-8000} --proxy-headers --forwarded-allow-ips='*'"]

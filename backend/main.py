@@ -36,7 +36,7 @@ limiter = Limiter(key_func=get_remote_address)
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     init_db()
-    logger.info("Startup complete. environment=%s email_enabled=%s", settings.ENVIRONMENT, settings.email_enabled)
+    logger.info("Startup complete. environment=%s email_transport=%s", settings.ENVIRONMENT, settings.email_transport)
     yield
     logger.info("Shutting down.")
 
