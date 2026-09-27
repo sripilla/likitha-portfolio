@@ -6,3 +6,4 @@ data/
 venv/
 *.db
 .DS_Store
+.vercel/

@@ -59,7 +59,27 @@ If `RESEND_API_KEY` is set, Resend is used; otherwise SMTP; otherwise email is s
 
 ## Deploying
 
-### Option A: Railway (about $0 extra on the $5 Hobby plan)
+### Option A: Vercel (free)
+`pyproject.toml` tells Vercel where the app is (`backend.main:app`), so no other config is needed.
+1. Sign in at [vercel.com](https://vercel.com) with GitHub as **sripilla**.
+2. **Add New → Project → Import** `likitha-portfolio`. Leave all build settings at their defaults.
+3. Under **Environment Variables**, add:
+   - `ENVIRONMENT=production`
+   - `CONTACT_RECEIVER_EMAIL=pilla.likitha@gmail.com`
+   - `RESEND_API_KEY=<your key>`
+4. Click **Deploy**. You get a URL like `https://likitha-portfolio.vercel.app`.
+5. Add `ALLOWED_ORIGINS=https://likitha-portfolio.vercel.app` (your real URL), then **Redeploy**.
+6. Check `https://<your-url>/api/health` returns `{"status":"ok",...}` and send yourself a test message.
+
+Every `git push` to `main` redeploys automatically.
+
+Vercel limitations to know:
+- Vercel functions only have a temporary `/tmp` folder, so the SQLite backup of
+  messages is **not permanent** there. Resend email is your real copy of each message.
+- Rate limiting is kept in memory per running instance, so it is looser than on a
+  single server. The honeypot field still stops simple bots.
+
+### Option B: Railway (about $0 extra on the $5 Hobby plan)
 1. On Railway: **New Project → Deploy from GitHub repo** and pick this repo.
    Railway detects the `Dockerfile` and builds it. The container listens on `$PORT` automatically.
 2. **Variables** tab, add:
@@ -73,7 +93,7 @@ If `RESEND_API_KEY` is set, Resend is used; otherwise SMTP; otherwise email is s
 5. **Add a Volume** mounted at `/app/data`, so saved submissions survive redeploys.
 6. Open `https://<your-app>.up.railway.app/api/health`. It should return `{"status":"ok",...}`.
 
-### Option B — Docker (any VPS, Fly.io, etc.)
+### Option C — Docker (any VPS, Fly.io, etc.)
 ```bash
 docker build -t likitha-portfolio .
 docker run -p 8000:8000 --env-file backend/.env -v $(pwd)/data:/app/data likitha-portfolio

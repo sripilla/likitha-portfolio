@@ -1,0 +1,19 @@
+[project]
+name = "likitha-portfolio"
+version = "1.0.0"
+description = "Likitha Sai Sri Pilla's portfolio: FastAPI backend serving a static frontend."
+requires-python = ">=3.11"
+# Keep in sync with backend/requirements.txt (used by the Dockerfile).
+dependencies = [
+    "fastapi==0.115.6",
+    "uvicorn[standard]==0.34.0",
+    "pydantic==2.10.6",
+    "pydantic-settings==2.7.1",
+    "python-dotenv==1.0.1",
+    "slowapi==0.1.9",
+    "email-validator==2.2.0",
+]
+
+# Tells Vercel where the FastAPI app lives.
+[tool.vercel]
+entrypoint = "backend.main:app"

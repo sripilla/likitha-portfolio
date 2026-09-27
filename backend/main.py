@@ -30,7 +30,16 @@ logging.basicConfig(
 )
 logger = logging.getLogger("likitha_portfolio")
 
-limiter = Limiter(key_func=get_remote_address)
+def client_ip(request: Request) -> str:
+    """Real visitor IP. Vercel and Railway put it first in X-Forwarded-For;
+    without this, every visitor would share the proxy's IP and one rate limit."""
+    forwarded = request.headers.get("x-forwarded-for", "")
+    if forwarded:
+        return forwarded.split(",")[0].strip()
+    return get_remote_address(request)
+
+
+limiter = Limiter(key_func=client_ip)
 
 
 @asynccontextmanager

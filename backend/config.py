@@ -3,6 +3,7 @@ Application configuration, loaded from environment variables / .env file.
 Keeping all config in one typed object avoids scattered os.getenv() calls
 and makes missing/invalid config fail fast at startup instead of at request time.
 """
+import os
 from functools import lru_cache
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
@@ -32,7 +33,8 @@ class Settings(BaseSettings):
     CONTACT_RATE_LIMIT: str = "5/hour"  # per-IP limit on the contact endpoint
 
     # Storage
-    DATABASE_PATH: str = "data/submissions.db"
+    # On Vercel only /tmp is writable (and it is temporary), so default there.
+    DATABASE_PATH: str = "/tmp/submissions.db" if os.environ.get("VERCEL") else "data/submissions.db"
 
     model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8")
 
